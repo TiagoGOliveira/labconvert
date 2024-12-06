@@ -143,7 +143,64 @@ def mesclar_dados(df_base, ref_abas):
 
 
 # Interface Streamlit
-st.title("Organizador e Mesclador de Dados por Grupo")
+
+# Configurar título da página e ícone
+st.set_page_config(
+    page_title="Organizador e Mesclador de Dados", 
+    page_icon="https://github.com/TiagoGOliveira/labconvert/blob/main/L%20-%20Lead%20(1).png?raw=true", 
+    layout="wide", 
+    initial_sidebar_state="expanded"
+)
+
+# Exibir logo
+logo_url = "https://lead-sa.com.br/wp-content/uploads/elementor/thumbs/lead-sa-logo-qq9mfkoiu8l57gz69xhgrmnl3z2xrwh799bnd1xibk.png"
+st.image(logo_url, width=200)
+
+# Estilo personalizado com CSS
+st.markdown(
+    """
+    <style>
+        body {
+            background-image: url('https://lead-sa.com.br/wp-content/uploads/2024/11/2-1-scaled.jpg');  # Caminho para a imagem de fundo
+            background-size: cover;  # Ajusta a imagem para cobrir toda a tela
+            background-repeat: no-repeat;  # Impede que a imagem se repita
+            background-position: center center;  # Centraliza a imagem
+            color: #222224;  # Texto com cor primária
+            font-family: 'Open Sans', sans-serif;  # Fonte personalizada
+        }
+
+        .stButton>button {
+            background-color: #222224;  # Cor de fundo do botão
+            color: white;  # Cor do texto do botão
+        }
+
+        .stButton>button:hover {
+            background-color: #13AB00;  # Cor de fundo do botão ao passar o mouse
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: #001646;  # Cor dos títulos
+        }
+
+        .sidebar .sidebar-content {
+            background-color: #222224;  # Cor de fundo da sidebar
+            color: white;  # Cor do texto na sidebar
+        }
+
+        .sidebar .sidebar-content a {
+            color: white;  # Cor dos links na sidebar
+        }
+
+        .sidebar .sidebar-content a:hover {
+            color: #13AB00;  # Cor dos links na sidebar ao passar o mouse
+        }
+    </style>
+    """, unsafe_allow_html=True
+)
+
+# Título e conteúdo do app
+st.title("Conversor de Laudos Laboratoriais")
+st.subheader("Carregue os arquivos gerados no MyLims e adicione os valores de referência")
 
 uploaded_file = st.file_uploader("Faça upload do arquivo Excel principal (.xls ou .xlsx)", type=["xls", "xlsx"])
 ref_file = st.file_uploader("Faça upload do arquivo de referência (.xlsx)", type=["xlsx"])
