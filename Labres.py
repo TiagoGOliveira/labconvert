@@ -238,7 +238,7 @@ st.title("Conversor de Laudos Laboratoriais MyLims")
 st.subheader("Carregue o arquivo exportado do MyLims e dos Valores de Referência para começar.")
 
 uploaded_file = st.file_uploader("Arquivo Excel Resultados (export) (.xls ou .xlsx)", type=["xls", "xlsx"])
-ref_file = st.file_uploader("Arquivo de referência (.xlsx)", type=["xlsx"])
+ref_file = st.file_uploader("Arquivo dos Valores de Referência (.xlsx)", type=["xlsx"])
 
 if uploaded_file and ref_file:
     try:
